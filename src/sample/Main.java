@@ -18,9 +18,9 @@ public class Main extends Application {
         Group g=new Group();
         Scene scene=new Scene(g);
         Model model=new Model();
-        System.out.println("test");
+        
         SceneJeu sceneJeu=new SceneJeu(model);
-        System.out.println("test2");
+
         SceneTower sceneTower=new SceneTower(model);
 
         g.getChildren().add(sceneJeu);
