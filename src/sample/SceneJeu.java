@@ -13,11 +13,11 @@ public class SceneJeu extends Parent {
         super();
         model=m;
         model.generate();
+        Rectangle r;
         boolean[][] boul=model.getChemin();
         for (int i = 0; i < 800; i++) {
             for (int j = 0; j < 700; j++) {
-                Rectangle r = new Rectangle(i, j, 1, 1);
-                r.setVisible(true);
+                r = new Rectangle(i, j, 1, 1);
                 if (boul[i][j]){
                     r.setFill(Color.BLACK);
                 }else

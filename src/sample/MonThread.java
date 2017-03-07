@@ -16,7 +16,7 @@ public class MonThread extends Thread {
 
     @Override
     public void run() {
-        List<Ennemi> ennemiList=party.model.getEnnemiePasSurMap();
+      /*  List<Ennemi> ennemiList=party.model.getEnnemiePasSurMap();
         party.time=0;
         //System.out.println("test");
         party.stop=true;
@@ -37,6 +37,6 @@ public class MonThread extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
     }
 }

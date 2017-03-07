@@ -92,13 +92,13 @@ public class JavaFX_DrawSomething extends Application {
     public void start(Stage primaryStage) {
         final Rectangle rectangle = new Rectangle(100, 100, 150, 100);
         rectangle.setFill(Color.RED);
-        rectangle.setOnMouseClicked(mouseEvent -> System.out.printf("Bouton %s cliqué sur le nœud, %d click(s) %f x %f.", mouseEvent.getButton(), mouseEvent.getClickCount(), mouseEvent.getX(), mouseEvent.getY()).println());
+       /* rectangle.setOnMouseClicked(mouseEvent -> System.out.printf("Bouton %s cliqué sur le nœud, %d click(s) %f x %f.", mouseEvent.getButton(), mouseEvent.getClickCount(), mouseEvent.getX(), mouseEvent.getY()).println());
         rectangle.setOnMouseDragged(mouseEvent -> System.out.printf("La souris effectue un cliquer-tirer sur le nœud %f x %f.", mouseEvent.getX(), mouseEvent.getY()).println());
         rectangle.setOnMouseEntered(mouseEvent -> System.out.printf("La souris entre sur le nœud %f x %f.", mouseEvent.getX(), mouseEvent.getY()).println());
         rectangle.setOnMouseExited(mouseEvent -> System.out.printf("La souris sort du nœud %f x %f.", mouseEvent.getX(), mouseEvent.getY()).println());
         rectangle.setOnMouseMoved(mouseEvent -> System.out.printf("La souris se déplace sur le nœud %f x %f.", mouseEvent.getX(), mouseEvent.getY()).println());
         rectangle.setOnMousePressed(mouseEvent -> System.out.printf("Bouton %s pressé sur le nœud %f x %f.", mouseEvent.getButton(), mouseEvent.getX(), mouseEvent.getY()).println());
-        rectangle.setOnMouseReleased(mouseEvent -> System.out.printf("Bouton %s relâché sur le nœud %f x %f.", mouseEvent.getButton(), mouseEvent.getX(), mouseEvent.getY()).println());
+        rectangle.setOnMouseReleased(mouseEvent -> System.out.printf("Bouton %s relâché sur le nœud %f x %f.", mouseEvent.getButton(), mouseEvent.getX(), mouseEvent.getY()).println());*/
         final Pane root = new Pane();
         root.getChildren().setAll(rectangle);
         final Scene scene = new Scene(root, 600, 600);

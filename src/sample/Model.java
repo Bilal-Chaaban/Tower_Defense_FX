@@ -12,7 +12,8 @@ public class Model {
     private boolean[][] chemin = new boolean [800][700];
 
     private Tower[][] positionTower= new Tower [800][700];
-    public List<Ennemi>[][] positionEnnemi= new ArrayList[800][700];
+
+    //public List<Ennemi>[][] positionEnnemi= new ArrayList[800][700];
     private List<Ennemi> ennemiePasSurMap=new ArrayList<>();
     //private List[][] rangeTower=new ArrayList[800][700];
     List<Tower> t=new ArrayList();
@@ -23,20 +24,20 @@ public class Model {
         for (int i = 150; i <200 ; i++) {
             for (int j = 0; j <150 ; j++) {
                 chemin[i][j]=true;
-                positionEnnemi[i][j]=new ArrayList<>();
+                //positionEnnemi[i][j]=new ArrayList<>();
 
             }
         }
         for (int i = 50; i <200 ; i++) {
             for (int j = 100; j <150 ; j++) {
                 chemin[i][j]=true;
-                positionEnnemi[i][j]=new ArrayList<>();
+                //positionEnnemi[i][j]=new ArrayList<>();
             }
         }
         for (int i = 50; i <100 ; i++) {
             for (int j = 150; j <550 ; j++) {
                 chemin[i][j]=true;
-                positionEnnemi[i][j]=new ArrayList<>();
+                //positionEnnemi[i][j]=new ArrayList<>();
             }
         }
         /*or (int i = 100; i <150 ; i++) {
@@ -47,31 +48,31 @@ public class Model {
         for (int i = 100; i <600 ; i++) {
             for (int j = 500; j <550 ; j++) {
                 chemin[i][j]=true;
-                positionEnnemi[i][j]=new ArrayList<>();
+                //positionEnnemi[i][j]=new ArrayList<>();
             }
         }
         for (int i = 550; i <600 ; i++) {
             for (int j = 350; j <500 ; j++) {
                 chemin[i][j]=true;
-                positionEnnemi[i][j]=new ArrayList<>();
+                //positionEnnemi[i][j]=new ArrayList<>();
             }
         }
         for (int i = 200; i <550 ; i++) {
             for (int j = 350; j <400 ; j++) {
                 chemin[i][j]=true;
-                positionEnnemi[i][j]=new ArrayList<>();
+                //positionEnnemi[i][j]=new ArrayList<>();
             }
         }
         for (int i = 200; i <250 ; i++) {
             for (int j = 200; j <350 ; j++) {
                 chemin[i][j]=true;
-                positionEnnemi[i][j]=new ArrayList<>();
+                //positionEnnemi[i][j]=new ArrayList<>();
             }
         }
         for (int i = 250; i <800 ; i++) {
             for (int j = 200; j <250 ; j++) {
                 chemin[i][j]=true;
-                positionEnnemi[i][j]=new ArrayList<>();
+                //positionEnnemi[i][j]=new ArrayList<>();
             }
         }
 
@@ -120,9 +121,9 @@ public class Model {
         return chemin;
     }
 
-    public List<Ennemi>[][] getPositionEnnemi() {
-        return positionEnnemi;
-    }
+    //public List<Ennemi>[][] getPositionEnnemi() {
+    //    return positionEnnemi;
+    //}
 
     public List<Ennemi> getEnnemiePasSurMap() {
         return ennemiePasSurMap;
