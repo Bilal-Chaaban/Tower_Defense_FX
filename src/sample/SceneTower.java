@@ -127,7 +127,7 @@ public class SceneTower extends Parent {
 
                 @Override
                 public void handle(MouseEvent t) {
-                    Tower tower =model.placeTower(towerMouvement.getTranslateX()+mouvPosX,towerMouvement.getTranslateY()+mouvPosY,1,towerMouvement);
+                    Tower tower =model.placeTower(towerMouvement.getTranslateX()+mouvPosX,towerMouvement.getTranslateY()+mouvPosY,1,towerMouvement,range);
                     //System.out.println((towerMouvement.getTranslateX()+800)+"       "+(towerMouvement.getTranslateY()+20));
 
                     //towerMouvement.setTranslateX(0);

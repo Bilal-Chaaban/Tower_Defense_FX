@@ -9,7 +9,8 @@ public class EnnemiFort extends Ennemi {
 
     EnnemiFort(){
         super(200,50);
-        image=new ImageView("EnnemiFort.png");
+        this.setImage(new ImageView("EnnemiFort.png"));
+
     }
 
 }

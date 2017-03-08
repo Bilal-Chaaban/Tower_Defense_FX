@@ -10,7 +10,7 @@ public class EnnemiNormal extends Ennemi {
 
     EnnemiNormal(){
         super(100,100);
-        image=new ImageView("EnnemiNormal.png");
+        this.setImage(new ImageView("EnnemiNormal.png"));
     }
 
 }

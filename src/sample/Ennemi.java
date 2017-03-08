@@ -7,9 +7,11 @@ import javafx.scene.image.ImageView;
  * Created by lb685 on 27/11/2016.
  */
 public abstract class Ennemi extends Parent{
-    private int vie;
-    private int vitesse;
+    protected int vie;
+    protected int vitesse;
     protected ImageView image;
+    protected double posX,posY;
+    protected int direction;
     Ennemi()
     {
         vie=0;
@@ -48,7 +50,34 @@ public abstract class Ennemi extends Parent{
         vie = vie - degatSubie;
     }
 
+    public void avance(){
+        switch (direction){
+            case 1: posX++;
+                break;
+            case 2: posY++;
+                break;
+            case 3: posX--;
+                break;
+            case 4: posY--;
+                break;
+        }
+        if (posY>=0){
+
+            image.setTranslateX(posX);
+            image.setTranslateY(posY);
+            image.setVisible(true);
+        }
+    }
+
     public void gainHp(int soin){
         vie = vie + soin;
+    }
+
+    public void setImage(ImageView image) {
+        this.image = image;
+        image.setVisible(false);
+        image.setX(0);
+        image.setY(0);
+        this.getChildren().add(image);
     }
 }

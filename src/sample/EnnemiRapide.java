@@ -10,7 +10,7 @@ public class EnnemiRapide extends Ennemi {
 
     EnnemiRapide(){
         super(50,150);
-        image=new ImageView("EnnemiRapide.png");
+        this.setImage(new ImageView("EnnemiRapide.png"));
     }
 
 }

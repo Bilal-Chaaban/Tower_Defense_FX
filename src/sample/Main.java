@@ -46,8 +46,18 @@ public class Main extends Application {
         scene.setFill(Color.AQUA);
         primaryStage.setScene(scene);
         primaryStage.show();
-        //Party party=new Party(model);
-        //party.run();
+        Ennemi e;
+        for (int i = 0; i < 10; i++) {
+            e=new EnnemiNormal();
+            e.posY=-i*10;
+            e.posX=155;
+            e.direction=2;
+            g.getChildren().add(e);
+            model.getEnnemi().add(e);
+        }
+        Party party=new Party(model);
+        Thread thread=new Thread(party);
+        thread.start();
 
     }
 

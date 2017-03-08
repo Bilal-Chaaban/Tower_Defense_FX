@@ -17,7 +17,7 @@ public abstract class Tower{
     private ImageView image;
     double posX,posY;
     public static int nbTower;
-
+    private Circle r;
     Tower(int id){
         this.id = id;
         range =0;
@@ -26,7 +26,11 @@ public abstract class Tower{
         nbTower+=1;
     }
 
-    Tower(int range, int damage, int attaqueSpeed,int id,ImageView image,double posX,double posY){
+    public void setR(Circle r) {
+        this.r = r;
+    }
+
+    Tower(int range, int damage, int attaqueSpeed, int id, ImageView image, double posX, double posY){
         this.range = range;
         this.damage = damage;
         this.attaqueSpeed = attaqueSpeed;
