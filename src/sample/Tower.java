@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.event.EventHandler;
+import javafx.scene.Parent;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -14,10 +15,10 @@ public abstract class Tower{
     private int damage;
     private int attaqueSpeed;
     private int id;
-    private ImageView image;
+    ImageView image;
     double posX,posY;
     public static int nbTower;
-    private Circle r;
+    Circle r;
     Tower(int id){
         this.id = id;
         range =0;
@@ -36,6 +37,7 @@ public abstract class Tower{
         this.attaqueSpeed = attaqueSpeed;
         this.id=id;
         this.image=image;
+       // this.getChildren().add(image);
         this.image.setOnMousePressed(onMousePressedEventHandler);
         this.posX=posX;
         this.posY=posY;
@@ -57,7 +59,7 @@ public abstract class Tower{
 
     int getAttaqueSpeed(){return attaqueSpeed;}
 
-    int getId(){return id;}
+    int getTowerId(){return id;}
 
     public void levelUp() {
         range++;

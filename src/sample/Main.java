@@ -47,14 +47,14 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         Ennemi e;
-        for (int i = 0; i < 10; i++) {
+        //for (int i = 0; i < 10; i++) {
             e=new EnnemiNormal();
-            e.posY=-i*10;
+            e.posY=-10;
             e.posX=155;
             e.direction=2;
             g.getChildren().add(e);
             model.getEnnemi().add(e);
-        }
+        //}
         Party party=new Party(model);
         Thread thread=new Thread(party);
         thread.start();

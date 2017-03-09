@@ -26,7 +26,7 @@ public class Party extends Parent implements Runnable {
             model.avance();
             //System.out.println("run");
             try {
-                Thread.sleep(10);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

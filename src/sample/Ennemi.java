@@ -46,8 +46,14 @@ public abstract class Ennemi extends Parent{
         return vitesse;
     }
 
-    public void perteHp(int degatSubie) {
+    public boolean perteHp(int degatSubie) {
         vie = vie - degatSubie;
+        //System.out.println(vie);
+        if (vie<=0) {
+            image.setVisible(false);
+            return true;
+        }
+        return false;
     }
 
     public void avance(){
