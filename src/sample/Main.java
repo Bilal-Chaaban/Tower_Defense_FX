@@ -1,5 +1,6 @@
 package sample;
 
+import com.oracle.deploy.update.UpdateCheck;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -20,11 +21,13 @@ public class Main extends Application {
         Model model=new Model();
         
         SceneJeu sceneJeu=new SceneJeu(model);
-
+        SceneUpdateTower sceneUpdateTower = new SceneUpdateTower();
         SceneTower sceneTower=new SceneTower(model);
+
 
         g.getChildren().add(sceneJeu);
         g.getChildren().add(sceneTower);
+        g.getChildren().add(sceneUpdateTower);
         /*
         Chemin c=new Chemin();
         c.generate();
@@ -44,6 +47,7 @@ public class Main extends Application {
 
 
         scene.setFill(Color.AQUA);
+
         primaryStage.setScene(scene);
         primaryStage.show();
         Ennemi e;

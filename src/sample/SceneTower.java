@@ -2,10 +2,12 @@ package sample;
 
 import javafx.event.EventHandler;
 import javafx.scene.Parent;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
+import javafx.scene.paint.*;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 
 /**
  * Created by Louis on 28/02/2017.
@@ -16,10 +18,20 @@ public class SceneTower extends Parent {
     ImageView towerMouvement=null;
     Model model;
     Circle range;
+    Rectangle fond_Tower = new Rectangle();
 
     public SceneTower(Model m){
+
         super();
         model=m;
+        fond_Tower.setWidth(100);
+        fond_Tower.setHeight(660);
+        fond_Tower.setTranslateX(800);
+
+        Image fond = new Image("fond_tower_verticale.png");
+        ImagePattern imagePatternFond = new ImagePattern(fond);
+        fond_Tower.setFill(imagePatternFond);
+        ImageView imageViewFond = new ImageView(fond);
         ImageView towerPetite=new ImageView("towerPetite.png");
         ImageView towerMoyen=new ImageView("towerMoyen.png");
         ImageView towerGrosse=new ImageView("towerGrosse.png");
@@ -43,6 +55,14 @@ public class SceneTower extends Parent {
         towerGrosse.setOnMouseDragged(petiteTowerOnMouseDraggedEventHandler);
         towerGrosse.setOnMouseReleased(petiteTowerOnMouseReleasedEventHandler);
 
+
+
+
+
+
+
+
+        this.getChildren().add(fond_Tower);
         this.getChildren().add(towerPetite);
         this.getChildren().add(towerMoyen);
         this.getChildren().add(towerGrosse);
