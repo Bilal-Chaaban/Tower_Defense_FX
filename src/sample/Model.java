@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.scene.Group;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
 
@@ -14,11 +15,16 @@ public class Model {
     private int[] positionvirage;
     private Tower[][] positionTower = new Tower[800][700];
     private List<Tower> towerList = new ArrayList<>();
+    private List<Projectile> projectileList=new ArrayList<>();
     //public List<Ennemi>[][] positionEnnemi= new ArrayList[800][700];
     private List<Ennemi> ennemi = new ArrayList<>();
     //private List[][] rangeTower=new ArrayList[800][700];
-
+    private Group group=null;
     private int tours;
+    private boolean test=true;
+    public Model() {
+        /*this.group=group;*/
+    }
 
     public void generate() {
         positionvirage = new int[7 * 3];
@@ -173,7 +179,7 @@ public class Model {
         return chemin;
     }
 
-    public void avance() {
+    public synchronized void avance() {
 
         for (Ennemi e : ennemi) {
             //System.out.println("test");
@@ -195,17 +201,30 @@ public class Model {
                 if (Math.pow(e.posX - tower.posX, 2) + Math.pow(e.posY - tower.posY, 2) < Math.pow(tower.r.getRadius(), 2)) {
 
                     tower.image.setRotate(-getAngle(tower,e));
+
+                    Projectile projectile=null;
+                    if (test){
+                        projectile=new Projectile(e,tower);
+                        projectileList.add(projectile);
+                        test=false;
+                    }
+
+
+
+                    //SceneProjectile sceneProjectile= (SceneProjectile) group.getChildren().get(2);
+                    //sceneProjectile.add(projectile);
                     //if (e.perteHp(tower.getDamage()))
                     //  ennemi.remove(e);
-                    //stop=false;
+                    stop=false;
                     //System.out.println("test");
                 }
             }
-
         }
-
+        for (Projectile p:projectileList){
+            p.avance();
+        }
             /*for (Ennemi e:ennemi) {
-                //System.out.println(tower.posX);
+                //System.out.println(tower+.posX);
                 if (Math.pow(e.posX-tower.posX,2)+Math.pow(e.posY-tower.posY,2)<Math.pow(tower.r.getRadius(),2)) {
                     if (e.perteHp(tower.getDamage()))
                         ennemi.remove(e);

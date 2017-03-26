@@ -9,6 +9,9 @@ import javafx.scene.paint.*;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Louis on 28/02/2017.
  */
@@ -102,6 +105,11 @@ public class SceneTower extends Parent {
         this.getChildren().add(towerMouvement);
         return ret;
     }
+    public void addProjectile(List<ImageView> l){
+        for (ImageView imageView:l){
+            this.getChildren().add(imageView);
+        }
+    }
     EventHandler<MouseEvent> petiteTowerOnMousePressedEventHandler =
             new EventHandler<MouseEvent>() {
 
@@ -150,6 +158,14 @@ public class SceneTower extends Parent {
                     Tower tower =model.placeTower(towerMouvement.getTranslateX()+mouvPosX,towerMouvement.getTranslateY()+mouvPosY,1,towerMouvement,range);
                     //System.out.println((towerMouvement.getTranslateX()+800)+"       "+(towerMouvement.getTranslateY()+20));
 
+                    List<ImageView> projectileList=new ArrayList<>();
+                    for (int i = 0; i < 5; i++) {
+                        ImageView imageView=new ImageView("flechette.png");
+                        imageView.setVisible(false);
+                        projectileList.add(imageView);
+                    }
+                    addProjectile(projectileList);
+                    tower.projectile=projectileList;
                     //towerMouvement.setTranslateX(0);
                    // towerMouvement.setTranslateY(0);
                     if(tower==null) {

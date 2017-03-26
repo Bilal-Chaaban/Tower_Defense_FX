@@ -7,6 +7,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
+import java.util.List;
+
 /**
  * Created by lb685 on 27/11/2016.
  */
@@ -18,6 +20,8 @@ public abstract class Tower{
     ImageView image;
     double posX,posY;
     public static int nbTower;
+    List<ImageView> projectile=null;
+    boolean[] proj= new boolean[5];
     Circle r;
     Tower(int id){
         this.id = id;
@@ -43,6 +47,9 @@ public abstract class Tower{
         this.posY=posY;
         nbTower+=1;
         System.out.println(nbTower);
+        for (int i = 0; i < 5; i++) {
+            proj[i]=false;
+        }
     }
 
     void setRange(int range){this.range=range;}
@@ -77,7 +84,10 @@ public abstract class Tower{
 
 
 
-
                 }
             };
+
+    public ImageView getProjectile(int i) {
+        return projectile.get(i);
+    }
 }
